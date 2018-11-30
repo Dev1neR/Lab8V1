@@ -52,26 +52,5 @@ namespace Lab8
                 chbHasGraphics.Checked = TheProcessor.HasGraphics;
             }
         }
-
-        private void tbCores_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(tbCores.Text, "[^0-9]"))
-            {
-                MessageBox.Show("Заборонено використання літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbCores.Text = tbCores.Text.Remove(tbCores.Text.Length - 1);
-            }
-        }
-
-        private void tbFreq_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Double d = Double.Parse(tbFreq.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Заборонено використання літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }
